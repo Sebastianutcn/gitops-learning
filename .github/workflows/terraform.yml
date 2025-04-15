@@ -1,4 +1,4 @@
-name: Terraform GitOps Workflow
+name: Terraform GitOps (Local Backend)
 
 on:
   push:
@@ -8,12 +8,9 @@ on:
 
 jobs:
   terraform:
-    name: Terraform Plan and Apply
+    name: Terraform Plan and Apply (Local)
     runs-on: ubuntu-latest
     env:
-      # TF_CLOUD_ORGANIZATION: sebastian-p3
-      # TF_WORKSPACE: aws-tf-learning
-      # TF_API_TOKEN: ${{ secrets.TF_API_TOKEN }}
       AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
       AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
 
@@ -38,6 +35,6 @@ jobs:
       - name: Terraform Plan
         run: terraform plan
 
-      - name: Terraform Apply (only on main)
+      - name: Terraform Apply
         if: github.ref == 'refs/heads/main'
         run: terraform apply -auto-approve
