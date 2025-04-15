@@ -1,9 +1,9 @@
-terraform {
-    backend "remote" {
-        organization = "sebastian-p3"
+# terraform {
+#     backend "remote" {
+#         organization = "sebastian-p3"
 
-        workspaces {
-            name = "aws-tf-learning"
-        }
-    }
-}
+#         workspaces {
+#             name = "aws-tf-learning"
+#         }
+#     }
+# }
