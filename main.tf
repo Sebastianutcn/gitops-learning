@@ -1,10 +1,10 @@
 terraform {
-  backend "remote" {
-    organization = "sebastian-p3"
-    workspaces {
-      name = "aws-tf-learning"
-    }
-  }
+  # backend "remote" {
+  #   organization = "sebastian-p3"
+  #   workspaces {
+  #     name = "aws-tf-learning"
+  #   }
+  # }
   required_providers {
     aws = {
       source  = "hashicorp/aws"
